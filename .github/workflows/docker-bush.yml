@@ -1,23 +1,25 @@
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  jublish_images:
-    runs-on : ubuntu-latest
+  publish_images:
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout 
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: build image
+      - name: Build Docker image
         run: docker build -t elycheikhsidahmedely23/devops:latest .
-      - name: push image to docker 
+
+      - name: Push Docker image
+        env:
+          DOCKER_PASSWORD: ${{ secrets.DEVOPS }}
+          DOCKER_USERNAME: elycheikhsidahmedely23
         run: |
-          echo ${{ secrets.DEVOPS }} | docker login -u elycheikhsidahmedely23 --password-stdin
-          docker push elycheikhsidahmedely23/devops:latest
-
-
-
-
-
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          docker push elycheikhsidahmedely23/dev
 
 
 
