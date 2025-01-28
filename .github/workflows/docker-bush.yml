@@ -16,7 +16,21 @@ jobs:
       - name: Push Docker image
         run: |
            echo ${{ secrets.DEVOPS }} | docker login -u elycheikhsidahmedely23 --password-stdin
-          docker push elycheikhsidahmedely23/devops
+           docker push elycheikhsidahmedely23/devops:latest
+
+
+
+
+
+     
+
+     
+ 
+
+
+
+
+
 
 
 
