@@ -18,7 +18,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DEVOPS }}
           DOCKER_USERNAME: elycheikhsidahmedely23
         run: |
-          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          echo $DOCKER_PASSWORD | docker login -u elycheikhsidahmedely23  --password-stdin
           docker push elycheikhsidahmedely23/dev
 
 
