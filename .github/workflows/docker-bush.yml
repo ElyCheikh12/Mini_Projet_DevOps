@@ -8,7 +8,7 @@ jobs:
 
 
       - name: build image
-        run: docker build -t elycheikhsidahmedely23/DevOps:latest
+        run: docker build -t elycheikhsidahmedely23/devops:latest
       - name: push image to docker 
         run: |
            echo ${{ secrets.DEVOPS }} | docker login -u docker login -u elycheikhsidahmedely23 --password-stdin
