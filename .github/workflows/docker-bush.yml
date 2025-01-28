@@ -1,16 +1,24 @@
 on: [push]
+
 jobs:
-  bublish_images:
-    runs_on: ubuntu-latest
+  jublish_images:
+    runs-on : ubuntu-latest
     steps:
-      - name: checkout
+      - name: checkout 
         uses: actions/checkout@v4
 
-
       - name: build image
-        run: docker build -t elycheikhsidahmedely23/DevOps:latest
-      - name: push image to docker 
+        run: docker build -t elycheikhsidahmedely23/DevOps:latest .
+
+      - name: push image to docker hub 
         run: |
-           echo ${{ secrets.DEVOPS }} | docker login -u docker login -u elycheikhsidahmedely23 --password-stdin
-           docker push elycheikhsidahmedely23/DevOps:latest
-          
+          echo ${{ secrets.DEVOPS }} | docker login -u elycheikhsidahmedely23 --password-stdin
+          docker push elycheikhsidahmedely23/DevOps:latest
+
+
+
+
+
+
+
+
