@@ -42,3 +42,12 @@ def add(request):
     else :
         forms=StudentForm()
         return render(request, 'insertEtudiant.html', {'form':forms})
+
+def delete(request , id ):
+    if id :
+        studentDeleted=get_object_or_404(Student , pk=id)
+        if studentDeleted:
+            studentDeleted.delete()
+            return redirect(reverse('seeAll'))
+    else :
+        return redirect(reverse('seeAll'))
