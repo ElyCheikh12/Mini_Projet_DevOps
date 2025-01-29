@@ -5,4 +5,5 @@ from django.urls import path
 urlpatterns=[
    path('' , views.seeAll , name="seeAll"),
    path('add/' , views.add , name="add"),
+   path('delete/<id>' , views.delete, name="delete"),
 ]
