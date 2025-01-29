@@ -19,7 +19,7 @@
                             <th>{{i.nom}}</th>
                             <th>{{i.email}}</th>
                             <th> <a href="">Update</a></th>
-                            <th> <a href="{% url 'viewDetails' i.id %}">Update</a></th>
+                            <th><a href="{% url 'delete' i.id%}">Delete</a></th>
                     
                     </tr>
                 {%endfor%}
